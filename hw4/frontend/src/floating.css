@@ -1,0 +1,36 @@
+/* Structured chat results become a floating card tray without changing the existing palette. */
+.chat:has(.chat-products)::before{content:"";position:fixed;inset:0;background:rgba(23,50,77,.28);backdrop-filter:blur(2px);z-index:-1;pointer-events:none}
+.chat:has(.chat-products){z-index:20}
+.chat:has(.chat-products) .chat-products{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(780px,calc(100vw - 36px));max-height:70vh;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;padding:58px 20px 20px;background:#fbfaf7;border:1px solid #d9e2e5;box-shadow:0 18px 55px #17324d45;border-radius:8px;z-index:21}
+.chat:has(.chat-products) .chat-products::before{content:"Matches from Campus Customs";position:absolute;top:20px;left:20px;color:#6e91ad;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.chat:has(.chat-products) .chat-products button{background:#fff;border:1px solid #e8e5de;padding:0 0 12px;color:#17324d;font-size:12px;text-align:left;display:flex;flex-direction:column;gap:7px}
+.chat:has(.chat-products) .chat-products button::first-line{font-weight:700}
+@media(max-width:700px){.chat:has(.chat-products) .chat-products{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.product-page{padding:45px 6vw 180px}.back-link{color:#52799a;margin-bottom:25px}.product-detail{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.product-detail>img{width:100%;background:#eef3f1}.product-detail h1{font-family:'Playfair Display';font-size:clamp(35px,5vw,64px);font-weight:600;line-height:1.05}.product-detail p{line-height:1.7;color:#587084}.product-detail .price{font-size:22px}.product-detail .sizes{display:flex;gap:6px;flex-wrap:wrap}.product-detail .sizes span{padding:8px;background:#deeee8;font-size:12px}.product-detail .sizes .sold{background:#eee;color:#999}@media(max-width:700px){.product-detail{grid-template-columns:1fr;gap:25px}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.products-skeleton-overlay{position:absolute;inset:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px;background:#f8f5efd9;z-index:2}.grid{position:relative}.skeleton-card{pointer-events:none}.skeleton-card-image,.skeleton-image,.skeleton-line,.skeleton-chip{background:linear-gradient(100deg,#e9eeee,#f8faf9,#e9eeee);background-size:200% 100%;animation:skeleton-shimmer 1.2s infinite}.skeleton-card-image{aspect-ratio:1}.skeleton-card>div:last-child{padding:15px}.skeleton-line{height:12px;margin:10px 0;border-radius:3px}.skeleton-line.wide{width:85%}.skeleton-line.short{width:45%}.skeleton-line.title{height:24px;width:75%}.skeleton-chip{display:inline-block;width:58px;height:28px;margin-right:5px;border-radius:3px}.typing-indicator{color:#6e91ad;font-style:italic}.chat-error-row{margin:8px 0;padding:9px 11px;background:#f7e8e5;color:#8d514b;border:1px solid #e7c9c4;border-radius:5px;font-size:12px}.chat-error-row button,.clear-chat{color:#477495;text-decoration:underline;font-size:11px}.clear-chat{margin-left:auto;text-decoration:none;padding:3px 6px}
+@keyframes skeleton-shimmer{to{background-position:-200% 0}}
+/* A small bulldog cursor keeps the Yale storefront personality visible throughout the page. */
+body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='25' font-size='24'%3E🐶%3C/text%3E%3C/svg%3E") 3 3,auto}button,a,input,select{cursor:pointer}.floating-card{position:relative}.floating-card:hover{transform:translateY(-3px);box-shadow:0 12px 25px #17324d22}.floating-card::after{content:'Preview product';position:absolute;left:10px;bottom:10px;background:#173f65dd;color:white;padding:5px 8px;border-radius:3px;font-size:10px;opacity:0;transition:opacity .2s}.floating-card:hover::after{opacity:1}
+.cart-drawer{position:fixed;right:22px;top:90px;width:320px;max-height:70vh;overflow:auto;background:#fbfaf7;border:1px solid #d9e2e5;box-shadow:0 16px 40px #17324d33;padding:20px;z-index:30}.cart-drawer h2{font-family:'Playfair Display';margin-top:0}.cart-row{display:flex;gap:10px;align-items:center;border-bottom:1px solid #e7e5df;padding:10px 0}.cart-row img{width:52px;height:52px;object-fit:cover}.cart-row strong{display:block;font-size:12px}.cart-remove{color:#8d514b;font-size:11px;text-decoration:underline}.cart-nav{color:#477495;font-size:12px}
+.cart-add{margin-top:8px;padding:7px 10px;background:#deeee8;color:#173f65;border-radius:3px;font-size:11px}.cart-add:disabled{opacity:.55;cursor:not-allowed}.card{cursor:pointer}
+.modal{z-index:40!important}
+.chat-launcher{position:fixed;right:22px;bottom:20px;z-index:25;background:#173f65;color:white;border-radius:999px;padding:13px 17px;box-shadow:0 10px 25px #17324d33;font-size:16px}.chat-launcher span{font-size:12px;margin-left:7px}.chat-collapse{color:#477495;font-size:20px;padding:0 5px}.product-image-tile{background:#eceae4;padding:28px;display:flex;align-items:center;justify-content:center;min-height:420px}.product-image-tile img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.color-choice{margin:22px 0}.color-choice h4{margin:0 0 9px}.swatches{display:flex;flex-wrap:wrap;gap:8px}.swatch{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid #d9dfdf;background:#fbfaf7;border-radius:4px;font-size:12px}.swatch i{display:inline-block;width:16px;height:16px;border-radius:50%;border:1px solid #bcc8c8;box-shadow:inset 0 0 0 2px #fff}
+
+/* Restored P9 affordances: size picking, cart drawer, skeleton sizing, empty state. */
+.skeleton-image{aspect-ratio:1;width:100%}
+.product-detail .sizes button{padding:8px;background:#deeee8;font-size:12px;border:1px solid transparent;border-radius:3px;color:#17324d}
+.product-detail .sizes button[aria-pressed="true"]{border-color:#173f65;font-weight:700}
+.product-detail .sizes button.sold,.product-detail .sizes button:disabled{background:#eee;color:#999;cursor:not-allowed}
+.cart-row small{color:#78909c;font-size:11px}
+.cart-row div{flex:1}
+.cart-total{display:flex;justify-content:space-between;margin-top:14px;font-size:13px}
+.empty-results{margin-top:26px;color:#587084;font-size:13px}
+.empty-results button{color:#477495;text-decoration:underline;font-size:13px}
+
+.auth label{font-size:11px;letter-spacing:.08em;font-weight:700;color:#6e91ad;margin-top:10px}
+.auth-error{margin:10px 0 0;padding:9px 11px;border-radius:4px;background:#fbeaea;border:1px solid #efc9c9;color:#8d4040;font-size:12px}
+.auth-switch{margin-top:10px;font-size:12px;color:#5d83a7;text-decoration:underline}
+.user-badge{display:flex;flex-direction:column;line-height:1.3}
+.user-badge strong{font-size:9px;letter-spacing:.14em;color:#8aa3b4}
+.user-badge span{font-size:13px}
+.user-badge small{font-size:10px;color:#8aa3b4}

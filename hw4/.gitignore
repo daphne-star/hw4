@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.py[cod]
+node_modules/
+frontend/dist/
+frontend/.vite/
+output/audit_trail.json
+.DS_Store
